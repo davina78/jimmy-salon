@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jimmy Salon</title>
+  <style>
+    :root {
+      --bg:  #835C3B;
+      --text: #333;
+      --accent: #e3e3fd;
+      --card: #e6e6fa;
+      --nav: #513B1C;
+    }
+    body {
+      margin: 0;
+      font-family: 'font-family', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      position: relative;
+      width: 100%;
+      height: 80vh; /* Menggunakan viewport height untuk full screen */
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; /* Pusatkan vertikal */
+      align-items: center; /* Pusatkan horizontal */
+    }
+
+    header img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+opacity: 0.5;
+    }
+
+    .header-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 2;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 3;
+      color: white;
+      max-width: 800px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 1;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+            color: #fff;
+    }
+
+    nav {
+      background-color: var(--nav);
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 4px 8px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      color: var(--accent);
+      margin-bottom: 30px;
+    }
+
+    .price {
+      color: #333;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  flex: 0 1 calc(33.3% - 25x); /* 3 kolom */
+  box-sizing: border-box;
+  max-width: calc(33.3% - 25px);
+}
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: var(--nav);
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background: #fff;
+    }
+
+    form button {
+      background: #666;
+      border: none;
+      padding: 12px 24px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    form button:hover {
+      background: #000;
+    }
+
+    footer {
+      background-color: var(--nav);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Perubahan khusus untuk Reservasi & Kontak */
+    section#reservasi, section#kontak {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    section#reservasi .card,
+    section#kontak .card {
+      max-width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      section#reservasi, section#kontak {
+        max-width: 100%;
+        padding: 4px 20px;
+      }
+
+      .card {
+        padding: 15px;
+      }
+      
+      header {
+        padding: 60px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#rambut">Layanan Rambut</a>
+    <a href="#kecantikan">Layanan Kecantikan</a>
+    <a href="#reservasi">Reservasi</a>
+    <a href="#kontak">Kontak</a>
+  </nav>
+
+  <header id="beranda">
+    <img src="images/WhatsApp Image 2025-05-20 at 08.52.14.jpg" alt="Background Salon">
+    <div class="header-content">
+      <h1>Jimmy Salon</h1>
+      <p> <b>Tempat di mana keindahan dan kepercayaan diri bertemu</b> </p>
+      
+    </div>
+  </header>
+
+  <section id="rambut">
+    <h2>Layanan Rambut</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/potong rambut (1).jpg" alt="Haircut" height="260" width="260">
+        <h3>Haircut</h3>
+        <div class="price">Rp.20.000 - Rp.100.000</div>
+        <p>Potongan rambut modern sesuai tren dan bentuk wajah Anda.</p>
+      </div>
+      <div class="card">
+      <img src="images/hair spa dan creambath (1).jpg" alt="Hair Spa & Creambath" height="260" width="260">
+        <h3>Hair Spa & Creambath</h3>
+        <div class="price">Rp.70.000 - Rp.200.000</div>
+        <p>Perawatan menyeluruh untuk rambut rusak dan stres.</p>
+      </div>
+      <div class="card">
+        <img src="images/warna rambut (1).jpg" alt="Hair Color" height="260" width="260">
+        <h3>Hair Color</h3>
+        <div class="price">Rp.50.000 - Rp.150.000</div>
+        <p>Pilihan warna lengkap mulai dari natural hingga fashion color.</p>
+      </div>
+      <div class="card">
+        <img src="images/tatanan rambut (1).jpg" alt="Hair Styling" height="260" width="260">
+        <h3>Hair Styling</h3>
+        <div class="price">Rp.50.000 - Rp.100.000</div>
+        <p>Penataan rambut untuk acara formal maupun non formal, sesuai gaya dan kebutuhan anda.</p>
+      </div>
+      <div class="card">
+        <img src="images/hair extention (1).jpg" alt="Hair Extention" height="260" width="260">
+        <h3>Hair Extention</h3>
+        <div class="price">Rp.100.000 - Rp.300.000</div>
+        <p>Menambah panjang dan volume rambut dengan hasil alami.</p>
+      </div>
+      <div class="card">
+        <img src="images/smooting (1).jpg" alt="Smooting" height="260" width="260">
+        <h3>Smooting</h3>
+        <div class="price">Rp.60.000 - Rp.250.000</div>
+        <p>Rambut lebih halus, lurus, dan mudah diatur.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kecantikan">
+    <h2>Layanan Kecantikan</h2>
+    <div class="card-container">
+      <div class="card">
+        <img src="images/facial wajah (1).jpg" alt="Facial Wajah" height="260" width="260">
+        <h3>Facial Wajah</h3>
+        <div class="price">Rp.80.000 - Rp.100.000</div>
+        <p>Pembersihan mendalam untuk wajah lebih cerah dan sehat.</p>
+      </div>
+      <div class="card">
+        <img src="images/make up (1).jpg" alt="Makeup Profesional" height="260" width="260" >
+        <h3>Makeup Profesional</h3>
+        <div class="price">Rp.150.000 - Rp.500.000</div>
+        <p>Makeup flawless untuk segala acara, dikerjakan oleh MUA profesional.</p>
+      </div>
+      <div class="card">
+        <img src="images/totok wajah (1).jpg" alt="Totok Wajah" height="260" width="260">
+        <h3>Totok Wajah</h3>
+        <div class="price">Rp.50.000 - Rp.100.000</div>
+        <p>Perawatan tradisional yang membantu melancarkan peredaran darah, mengurangi stress, dan membuat wajah lebih segar alami.</p>
+      </div>
+      <div class="card">
+        <img src="images/manicue and pedicure (1).jpg" alt="Manicure & Pedicure" height="260" width="260">
+        <h3>Manicure & Pedicure</h3>
+        <div class="price">Rp.25.000 - Rp.80.000</div>
+        <p>Perawatan kuku tangan dan kaki untuk tampil lebih bersih, sehat, dan menarik.</p>
+      </div>
+      <div class="card">
+        <img src = "images/eyelash (1).jpg " alt="Eyelash Extention" height="260" width="260">
+        <h3>Eyelash Extention</h3>
+        <div class="price">Rp.120.000 - Rp.300.000</div>
+        <p>Mata tampak lebih indah dengan sambungan bulu mata yang natural.</p>
+      </div>
+      <div class="card">
+        <img src="images/masagge tubuh (1).jpg" alt="Body Massage" height="260" width="260">
+        <h3>Body Massage</h3>
+        <div class="price">Rp.100.000 - Rp.250.000</div>
+        <p>Pijatan relaksasi seluruh tubuh dengan teknik pijatan tradisional untuk menghilangkan pegal dan stres.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="reservasi">
+    <h2>Reservasi Online</h2>
+    <div class="card">
+      <form onsubmit="event.preventDefault(); alert('Reservasi berhasil dikirim!'); this.reset();">
+        <label>Nama Lengkap</label>
+        <input type="text" required>
+
+        <label>Tanggal Reservasi</label>
+        <input type="date" required>
+
+        <label>Layanan</label>
+        <select required>
+          <option value="">-- Pilih --</option>
+          <option>Haircut</option>
+          <option>Hair spa & Creambath</option>
+          <option>Hair Color</option>
+          <option>Hair Styling</option>
+          <option>Hair Extention</option>
+          <option>Smooting</option>
+          <option>Facial Wajah</option>
+          <option>Makeup Profesional</option>
+          <option>Totok Wajah</option>
+          <option>Manicure & Pedicure</option>
+          <option>Eyelash Extention</option>
+          <option>Body Massage</option>
+        </select>
+
+        <label>Catatan Tambahan</label>
+        <textarea rows="4"></textarea>
+        <button type="submit">Kirim Reservasi ✉️</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="kontak">
+    <h2>Kontak Kami</h2>
+    <div class="card">
+    <p>Alamat: <a href="https://maps.app.goo.gl/nWqyt9mtqjqASo7v6" target="_self" style="color:var #e3e3fd;" >Jl. RA Wiryaatmaja, Pesayangan, Kedungwuluh, Kec. Purwokerto Barat, Kabupaten Banyumas, Jawa Tengah 53131</a></p>
+      <p>WhatsApp: <a href="https://wa.me/625292935888" target="_self" style="color: var(#e3e3fd);">0852-9293-5888</a></p>
+      <p>Instagram: <a href="https://www.instagram.com/jimmy.salon?igsh=MWpnbTg3ZHc5bW1kOA==" target="_self" style="color: var(#e3e3fd);">@jimmy.salon</a></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Jimmy Salon. All rights reserved.
+  </footer>
+
+</body>
+</html>
